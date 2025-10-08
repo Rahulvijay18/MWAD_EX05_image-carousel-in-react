@@ -1,5 +1,6 @@
 # MWAD_EX05_image-carousel-in-react
-## Date:
+
+## Date: 08/10/2025
 
 ## AIM
 To create a Image Carousel using React 
@@ -40,8 +41,238 @@ Clean up the interval when the component unmounts using clearInterval to prevent
 
 ## PROGRAM
 
+### ImageCarousel.jsx
+```
+import { useState, useEffect, useCallback } from "react";
+const ImageCarousel = ({ images, autoRotateInterval = 3000 }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoRotating, setIsAutoRotating] = useState(true);
+  const [direction, setDirection] = useState("next");
+
+  const nextImage = useCallback(() => {
+    setDirection("next");
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
+
+  const prevImage = useCallback(() => {
+    setDirection("prev");
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  const goToImage = (index) => {
+    setDirection(index > currentIndex ? "next" : "prev");
+    setCurrentIndex(index);
+  };
+
+  useEffect(() => {
+    if (!isAutoRotating) return;
+
+    const interval = setInterval(() => {
+      nextImage();
+    }, autoRotateInterval);
+
+    return () => clearInterval(interval);
+  }, [isAutoRotating, nextImage, autoRotateInterval]);
+
+  const handleMouseEnter = () => setIsAutoRotating(false);
+  const handleMouseLeave = () => setIsAutoRotating(true);
+
+  return (
+    <div className="carousel-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className="carousel-images">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`carousel-slide ${
+              index === currentIndex ? "active" : ""
+            }`}
+          >
+            <img src={image.src} alt={image.alt} className="carousel-img" />
+            {image.title && <div className="carousel-title">{image.title}</div>}
+          </div>
+        ))}
+
+        <button className="carousel-btn prev" onClick={prevImage}>
+          &#10094;
+        </button>
+        <button className="carousel-btn next" onClick={nextImage}>
+          &#10095;
+        </button>
+        <button className="carousel-btn play-pause" onClick={() => setIsAutoRotating(!isAutoRotating)}>
+          {isAutoRotating ? "❚❚" : "▶"}
+        </button>
+      </div>
+
+      <div className="carousel-dots">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentIndex ? "active-dot" : ""}`}
+            onClick={() => goToImage(index)}
+          ></span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ImageCarousel;
+
+```
+
+### Carousel.css
+```
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: #fff;
+}
+
+.carousel-images {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel-title {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: rgba(255,255,255,1);
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+.carousel-btn.play-pause {
+  top: 15px;
+  right: 15px;
+  transform: none;
+  font-size: 1.2rem;
+}
+
+.carousel-dots {
+  text-align: center;
+  padding: 15px 0;
+  background: #f1f1f1;
+}
+
+.dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.active-dot {
+  background-color: #717171;
+}
+
+```
+
+### App.jsx
+```
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ImageCarousel from "./ImageCarousel";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+
+const App = () => {
+  const images = [
+    { src: "https://picsum.photos/id/1018/900/450", alt: "Image 1", title: "Beautiful Landscape" },
+    { src: "https://picsum.photos/id/1025/900/450", alt: "Image 2", title: "Serene Beach" },
+    { src: "https://picsum.photos/id/1035/900/450", alt: "Image 3", title: "Majestic Mountains" },
+    { src: "https://picsum.photos/id/1043/900/450", alt: "Image 4", title: "Starry Night" }
+  ];
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<ImageCarousel images={images} />}
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
+
+```
 
 ## OUTPUT
+
+
+<img width="1900" height="907" alt="Screenshot 2025-10-08 143338" src="https://github.com/user-attachments/assets/ca5b2bd3-8c3a-4648-bd2c-3eb64240fdf3" />
+
+<img width="1898" height="900" alt="Screenshot 2025-10-08 143353" src="https://github.com/user-attachments/assets/b17a3e56-a21e-433d-9e98-5a4e0bd1b0d1" />
+
+<img width="1900" height="903" alt="image" src="https://github.com/user-attachments/assets/e850537d-b091-4ccc-baca-66d109d93be6" />
+
+
+
+<img width="1895" height="902" alt="Screenshot 2025-10-08 143403" src="https://github.com/user-attachments/assets/2ea5af54-a1e6-4840-a4f2-099ee2a61d2d" />
+
+<img width="1900" height="907" alt="Screenshot 2025-10-08 204431" src="https://github.com/user-attachments/assets/88d1c728-07b9-4cc6-bdb7-25b55a3434e3" />
+
+
 
 
 ## RESULT
