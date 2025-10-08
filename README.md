@@ -257,22 +257,26 @@ export default App;
 
 ```
 
-## OUTPUT
+## **OUTPUT**
 
 
-<img width="1900" height="907" alt="Screenshot 2025-10-08 143338" src="https://github.com/user-attachments/assets/ca5b2bd3-8c3a-4648-bd2c-3eb64240fdf3" />
+<img width="1901" height="903" alt="Screenshot 2025-10-08 212623" src="https://github.com/user-attachments/assets/2059ed91-7cbc-42f0-ac0f-458edc2cbbe5" />
 
-<img width="1898" height="900" alt="Screenshot 2025-10-08 143353" src="https://github.com/user-attachments/assets/b17a3e56-a21e-433d-9e98-5a4e0bd1b0d1" />
+---
+<img width="1901" height="903" alt="Screenshot 2025-10-08 212635" src="https://github.com/user-attachments/assets/defbdaef-8510-44df-afb3-71bd58c60ec6" />
 
-<img width="1900" height="903" alt="image" src="https://github.com/user-attachments/assets/e850537d-b091-4ccc-baca-66d109d93be6" />
+---
+<img width="1899" height="897" alt="Screenshot 2025-10-08 212646" src="https://github.com/user-attachments/assets/310a4aa0-8d94-44b0-8edf-f8d3f2203da4" />
+
+---
+<img width="1899" height="897" alt="Screenshot 2025-10-08 212737" src="https://github.com/user-attachments/assets/db5caa02-46e9-44f4-9705-afcaacbb4617" />
 
 
-
-<img width="1895" height="902" alt="Screenshot 2025-10-08 143403" src="https://github.com/user-attachments/assets/2ea5af54-a1e6-4840-a4f2-099ee2a61d2d" />
-
-<img width="1900" height="907" alt="Screenshot 2025-10-08 204431" src="https://github.com/user-attachments/assets/88d1c728-07b9-4cc6-bdb7-25b55a3434e3" />
+---
+<img width="1893" height="893" alt="Screenshot 2025-10-08 212746" src="https://github.com/user-attachments/assets/bac79c34-7ed9-4d0d-8275-20dc70a2eb4e" />
 
 
+---
 
 
 ## RESULT
