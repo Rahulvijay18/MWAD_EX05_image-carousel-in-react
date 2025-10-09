@@ -129,7 +129,7 @@ export default ImageCarousel;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  background: #fff;
+  background: #e6f2ff;
 }
 
 .carousel-images {
@@ -259,24 +259,16 @@ export default App;
 
 ## **OUTPUT**
 
+<img width="1897" height="904" alt="Screenshot 2025-10-09 134429" src="https://github.com/user-attachments/assets/9644a0f9-7475-47a0-9973-44843e5230b4" />
 
-<img width="1901" height="903" alt="Screenshot 2025-10-08 212623" src="https://github.com/user-attachments/assets/2059ed91-7cbc-42f0-ac0f-458edc2cbbe5" />
+<img width="1900" height="896" alt="Screenshot 2025-10-09 134440" src="https://github.com/user-attachments/assets/8a431d3e-ac2b-4c35-aac1-c7b6548c3562" />
 
----
-<img width="1901" height="903" alt="Screenshot 2025-10-08 212635" src="https://github.com/user-attachments/assets/defbdaef-8510-44df-afb3-71bd58c60ec6" />
+<img width="1895" height="903" alt="Screenshot 2025-10-09 134451" src="https://github.com/user-attachments/assets/98b175f5-a532-4ba8-890b-90ffabad3748" />
 
----
-<img width="1899" height="897" alt="Screenshot 2025-10-08 212646" src="https://github.com/user-attachments/assets/310a4aa0-8d94-44b0-8edf-f8d3f2203da4" />
+<img width="1892" height="890" alt="Screenshot 2025-10-09 134504" src="https://github.com/user-attachments/assets/3d457f41-de29-4d77-8137-99456e4b7e75" />
 
----
-<img width="1899" height="897" alt="Screenshot 2025-10-08 212737" src="https://github.com/user-attachments/assets/db5caa02-46e9-44f4-9705-afcaacbb4617" />
+<img width="1898" height="899" alt="Screenshot 2025-10-09 134514" src="https://github.com/user-attachments/assets/c2689ff3-9d93-4ea3-985c-963686a900a2" />
 
-
----
-<img width="1893" height="893" alt="Screenshot 2025-10-08 212746" src="https://github.com/user-attachments/assets/bac79c34-7ed9-4d0d-8275-20dc70a2eb4e" />
-
-
----
 
 
 ## RESULT
