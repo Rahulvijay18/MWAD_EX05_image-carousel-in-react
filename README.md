@@ -265,9 +265,10 @@ export default App;
 
 <img width="1895" height="903" alt="Screenshot 2025-10-09 134451" src="https://github.com/user-attachments/assets/98b175f5-a532-4ba8-890b-90ffabad3748" />
 
-<img width="1892" height="890" alt="Screenshot 2025-10-09 134504" src="https://github.com/user-attachments/assets/3d457f41-de29-4d77-8137-99456e4b7e75" />
+<img width="1897" height="899" alt="Screenshot 2025-10-09 141320" src="https://github.com/user-attachments/assets/b3e856d7-301d-42ac-a5c1-262639c86495" />
 
-<img width="1898" height="899" alt="Screenshot 2025-10-09 134514" src="https://github.com/user-attachments/assets/c2689ff3-9d93-4ea3-985c-963686a900a2" />
+
+<img width="1898" height="898" alt="Screenshot 2025-10-09 141329" src="https://github.com/user-attachments/assets/2c1124d7-5ca6-4ec9-b75e-7d6f611afa05" />
 
 
 
